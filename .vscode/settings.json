@@ -105,6 +105,7 @@
         "string.h": "c",
         "stdio.h": "c",
         "rlgl.h": "c",
-        "raylib.h": "c"
+        "raylib.h": "c",
+        "*.m": "cpp"
     }
 }

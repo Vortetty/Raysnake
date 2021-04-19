@@ -1,4 +1,4 @@
-@echo off
+::@echo off
 setlocal EnableExtensions DisableDelayedExpansion
 
 :: Clean up previous
@@ -20,7 +20,7 @@ set RAYLIB_RES_FILE="raylib\src\raylib.rc.data"
 set COMPILER="g++.exe"
 set MSVC="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx86\x86\cl.exe"
 set EXTRAS=-fpermissive
-set EXTRA_FILES=miniz.c
+set EXTRA_FILES=
 ::set ORIG_PATH=%PATH%
 ::set TDM_LIBS="TDM-GCC\x86_64-w64-mingw32\lib"
 
@@ -52,7 +52,7 @@ cmd /c if exist %NAMEPART%.exe del /F %NAMEPART%.exe
 %COMPILER% %FILENAME% %EXTRA_FILES% %RAYLIB_RES_FILE% -o %NAMEPART%.x86.exe -s -Ofast %extras% -I%RAYLIB_SRC% -L%RAYLIB_SRC% -Lextra-dlls -lraylib -lopengl32 -lgdi32 -lwinmm -std=c++17 -Wall -m32 -mwindows -mthreads -static -fdata-sections -ffunction-sections -Wl,--gc-sections
 
 :: Max optimize with upx
-upx\upx.exe --ultra-brute -9 --best -v -f --compress-icons=1 --compress-resources=1 --strip-relocs=1 --compress-exports=1 %NAMEPART%.x86.exe
+::upx\upx.exe --ultra-brute -9 --best -v -f --compress-icons=1 --compress-resources=1 --strip-relocs=1 --compress-exports=1 %NAMEPART%.x86.exe
 
 
 :: Ensure dirs for built exes
