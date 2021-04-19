@@ -168,7 +168,6 @@ int main(int argc, char* argv[])
 
         for (auto i : snakePos){
             DrawTextureRec(bodyTex, {0, 0, 31, 31}, {(float)((i.x*32)+64), (float)((i.y*32)+64)}, WHITE);
-            std::cout << "drew snake at (" << i.x << ", " << i.y << ")";
         }
 
         switch (tmp){
